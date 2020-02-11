@@ -1,0 +1,34 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+</head>
+    <table border="1px" class="table">
+        <tr class="container">
+            <!-- <th>id   </th> -->
+            <th >Full Name  </th> 
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>City</th>
+            <th>Department</th>
+            <th>Operations</th>
+        </tr>
+        <tr *ngFor="let profile of empData | async">
+            <!-- <td>{{profile.id}}</td> -->
+            <td>{{profile.name}}</td>
+            <td>{{profile.email}}</td>
+            <td>{{profile.mobile}}</td>
+            <td>{{profile.city}}</td>
+            <td>{{profile.Department}}</td>
+        </tr>
+    </table>
+
+<!-- [routerLink]="['/delete-employee',profile.id]" -->
