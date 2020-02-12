@@ -11,7 +11,7 @@ import { Employee } from 'src/app/employees/employees.model';
 })
 export class ListContainerComponent implements OnInit {
   employeeData: Observable<Employee[]>;
-  constructor(private crudservive: EmployeeCrudService) {
+  constructor(private crudservice: EmployeeCrudService) {
     this.getAllEmployees();
    }
 
@@ -19,6 +19,12 @@ export class ListContainerComponent implements OnInit {
   }
 
   getAllEmployees() {
-    this.employeeData = this.crudservive.getEmloyees();
+    this.employeeData = this.crudservice.getEmloyees();
+  }
+
+  deleteEmployee(id : number){
+    
+    this.crudservice.deleteEmployee(id).subscribe();
+    this.getAllEmployees();
   }
 }

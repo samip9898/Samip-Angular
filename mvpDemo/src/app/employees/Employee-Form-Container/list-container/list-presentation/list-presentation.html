@@ -1,7 +1,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -9,26 +9,41 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+<div class="container">
+    <form class="navbar-form" role="search">
+        <button [routerLink] = "form" >Create <i class="fa fa-plus"></i></button>&nbsp;
+        <div class="input-group add-on">
+            <input class="form-control" placeholder="Search" name="srch-term" id="srch-term" type="text">
+            <div class="input-group-btn">
+                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+            </div>
+        </div>
+    </form>
     <table border="1px" class="table">
         <tr class="container">
             <!-- <th>id   </th> -->
-            <th >Full Name  </th> 
+            <th>Full Name <a><i class="fa fa-toggle-up"></i></a>&nbsp;&nbsp;&nbsp;<a><i
+                        class="fa fa-toggle-down"></i></a> </th>
             <th>Email</th>
             <th>Mobile</th>
             <th>City</th>
             <th>Department</th>
             <th>Operations</th>
         </tr>
-        <tr *ngFor="let profile of empData | async">
+        <tr *ngFor="let profile of empData  | async" class="container">
             <!-- <td>{{profile.id}}</td> -->
             <td>{{profile.name}}</td>
             <td>{{profile.email}}</td>
             <td>{{profile.mobile}}</td>
             <td>{{profile.city}}</td>
             <td>{{profile.Department}}</td>
+            <td> <button type="button">Edit <i class="fa fa-edit"></i></button>
+                <button (click) = "deleteEmployee(profile.id)">Delete<i class='fa fa-trash'></i></button> </td>
+
         </tr>
     </table>
+</div>
 
 <!-- [routerLink]="['/delete-employee',profile.id]" -->
