@@ -1,10 +1,20 @@
- export class Employee{
+export class Employee {
 
-     id : number;
-     name: string;
-     email: string;
-     mobile: number;
-     city: string;
-     department: string;
-     gender:string;
- }
+
+    name: string;
+    email: string;
+    address?: Address[]
+    mobile: number;
+    department: string;
+    gender: string;
+    hireDate: Date;
+    permanent: boolean;
+    id: number;
+}
+
+class Address {
+    city: string
+    street: string
+    zipCode: number
+    state: string
+}

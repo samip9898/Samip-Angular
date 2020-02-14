@@ -13,7 +13,7 @@
 </head>
 <div class="container">
     <form class="navbar-form" role="search">
-        <button [routerLink] = "form" >Create <i class="fa fa-plus"></i></button>&nbsp;
+        
         <div class="input-group add-on">
             <input class="form-control" placeholder="Search" name="srch-term" id="srch-term" type="text">
             <div class="input-group-btn">
@@ -28,7 +28,7 @@
                         class="fa fa-toggle-down"></i></a> </th>
             <th>Email</th>
             <th>Mobile</th>
-            <th>City</th>
+            <th>Address</th>
             <th>Department</th>
             <th>Operations</th>
         </tr>
@@ -37,9 +37,9 @@
             <td>{{profile.name}}</td>
             <td>{{profile.email}}</td>
             <td>{{profile.mobile}}</td>
-            <td>{{profile.city}}</td>
+            <td><span *ngFor="let add of profile.address">{{add.street + add.city + add.state + add.zipCode}}</span></td>
             <td>{{profile.Department}}</td>
-            <td> <button type="button">Edit <i class="fa fa-edit"></i></button>
+            <td> <button type="button" (click)="onEdit(profile.id)">Edit <i class="fa fa-edit"></i></button>
                 <button (click) = "deleteEmployee(profile.id)">Delete<i class='fa fa-trash'></i></button> </td>
 
         </tr>

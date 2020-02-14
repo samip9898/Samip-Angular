@@ -10,17 +10,19 @@ import { EventEmitter } from '@angular/core';
   templateUrl: './list-presentation.html',
   styleUrls: ['./list-presentation.scss']
 })
-export class ListPresentationComponent implements OnInit {
-  @Input() empData : Observable<Employee[]>;
+export class ListPresentation {
+  @Input() empData: Observable<Employee[]>;
   @Output() deleteEvent = new EventEmitter<number>();
-
+  @Output() editEvent = new EventEmitter<number>();
   constructor() { }
 
-deleteEmployee(id:number){
+  deleteEmployee(id: number) {
+
+    this.deleteEvent.emit(id);
+  }
   
-this.deleteEvent.emit(id);
-}
-  ngOnInit() {
+  onEdit(id: number) {
+    this.editEvent.emit(id)
   }
 
 }

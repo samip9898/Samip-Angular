@@ -1,13 +1,47 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input, Output, EventEmitter, OnChanges } from '@angular/core';
+import{ FormPresenter } from '../form-presenter/form-presenter';
+import { Employee } from 'src/app/employees/employees.model';
+
+import { FormGroup } from '@angular/forms';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-form-presentation',
   templateUrl: './form-presentation.html',
   styleUrls: ['./form-presentation.scss']
 })
-export class FormPresentationComponent implements OnInit {
+export class FormPresentation implements OnChanges {
 
-  constructor() { }
+  @Input() employee:Employee;
+  @Output() createEvent= new EventEmitter<FormGroup>()
+  constructor(private empFormPresenter:FormPresenter){
+    this.empForm= this.empFormPresenter.createEmployeeForm()
+      this.departments=this.empFormPresenter.departments
+  }
+  empForm:FormGroup
+  departments:string[]
+  ngOnChanges() {
+    if(this.employee)
+    {
+      console.log(this.employee)
+      this.empForm.patchValue(this.employee)
+    }
+  }
+  get fun()
+  {
+   
+    return this.empForm.controls
+  }
+  newAddress()
+  {
+    this.empFormPresenter.addAddress()
+  }
+  onSubmit()
+  {
+    console.log(this.empForm.value);
+    
+    this.createEvent.emit(this.empForm)
+  }
 
   ngOnInit() {
   }

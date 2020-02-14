@@ -9,11 +9,11 @@ import { Employee } from 'src/app/employees/employees.model';
   templateUrl: './list-container.html',
   styleUrls: ['./list-container.scss']
 })
-export class ListContainerComponent implements OnInit {
+export class ListContainer implements OnInit {
   employeeData: Observable<Employee[]>;
   constructor(private crudservice: EmployeeCrudService) {
     this.getAllEmployees();
-   }
+  }
 
   ngOnInit() {
   }
@@ -22,9 +22,13 @@ export class ListContainerComponent implements OnInit {
     this.employeeData = this.crudservice.getEmloyees();
   }
 
-  deleteEmployee(id : number){
-    
+  deleteEmployee(id: number) {
+
     this.crudservice.deleteEmployee(id).subscribe();
     this.getAllEmployees();
   }
+  editEmployee(id:number)
+    {
+        this.crudservice.getId(id)
+    }
 }

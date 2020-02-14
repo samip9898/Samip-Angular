@@ -1,2 +1,2 @@
 
-<app-form-presentation></app-form-presentation>
+<app-form-presentation (createEvent)="createEmployee($event)" [employee]="employeeDetails$ | async"></app-form-presentation>
