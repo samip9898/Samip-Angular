@@ -13,7 +13,7 @@ import { from } from 'rxjs';
 export class FormPresentation implements OnChanges {
 
   @Input() employee:Employee;
-  @Output() createEvent= new EventEmitter<FormGroup>()
+  @Output() createEvent= new EventEmitter<Employee>()
   constructor(private empFormPresenter:FormPresenter){
     this.empForm= this.empFormPresenter.createEmployeeForm()
       this.departments=this.empFormPresenter.departments
@@ -29,7 +29,6 @@ export class FormPresentation implements OnChanges {
   }
   get fun()
   {
-   
     return this.empForm.controls
   }
   newAddress()
@@ -38,12 +37,9 @@ export class FormPresentation implements OnChanges {
   }
   onSubmit()
   {
-    console.log(this.empForm.value);
-    
-    this.createEvent.emit(this.empForm)
+    this.createEvent.emit(this.empForm.value)
   }
 
   ngOnInit() {
   }
-
 }

@@ -8,6 +8,7 @@ import { ListContainer } from './Employee-Form-Container/list-container/list-con
 import { FormPresentation } from './Employee-Form-Container/form-container/form-presentation/form-presentation';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ListPresentation } from './Employee-Form-Container/list-container/list-presentation/list-presentation';
+import { EmployeeCrudService } from './employee-crud.service';
 
 
 
@@ -20,6 +21,7 @@ import { ListPresentation } from './Employee-Form-Container/list-container/list-
     ReactiveFormsModule,
     FormsModule
   ],
+  providers:[EmployeeCrudService]
   
 })
 export class EmployeesModule { }

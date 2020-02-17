@@ -1,46 +1,50 @@
 import { Injectable } from '@angular/core';
 import { Employee } from '../employees/employees.model';
  import { HttpClient } from '@angular/common/http';
- import { Observable } from 'rxjs';
+ import { Observable, from } from 'rxjs';
  import { FormGroup } from '@angular/forms';
  import { Router } from '@angular/router';
+ import { environment } from '../../environments/environment';
 
 
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class EmployeeCrudService {
 id : number
-baseUrl:string='http://localhost:3000/profiles';
+apiUrl : string;
 
-  constructor(private httpclient:HttpClient, private route:Router) { }
+  constructor(private httpclient:HttpClient, private route:Router,) { 
+    this.apiUrl=environment.baseUrl;
+  }
 
   getEmloyees() : Observable<Employee[]>{
     return this.httpclient.get<Employee[]>('http://localhost:3000/profiles');
   }
   getEmployee(id:number):Observable<Employee[]>
   {
-    return this.httpclient.get<Employee[]>(`${this.baseUrl}`+`/${id}`)
+    return this.httpclient.get<Employee[]>(`${this.apiUrl}`+`/${id}`)
   }
   deleteEmployee(id : number) : Observable<Employee[]>{
     
     this.id = id;
-  return this.httpclient.delete<Employee[]>(`http://localhost:3000/profiles/${this.id}`);
+  return this.httpclient.delete<Employee[]>(`${this.apiUrl}`+`/${id}`);
   }
-  addData(employee:FormGroup) 
+  addData(employee:Employee) 
   {
-    return this.httpclient.post(`${this.baseUrl}`,employee.value).subscribe();
+    return this.httpclient.post(`${this.apiUrl}`,employee).subscribe();
   }
-  editData(employee:FormGroup,id:number) 
+  editData(employee:Employee,id:number) 
   
   {
-    debugger
-    return this.httpclient.put(`http://localhost:3000/profiles/${id}`,employee.value).subscribe();
+   
+    return this.httpclient.put(`${this.apiUrl}`+`/${id}`,employee).subscribe();
   }
   getId(id:number)
   {
       this.route.navigate(['/form-container',id])
+  }
+  searchEmployee(searchData){
+    return this.httpclient.get(`${this.apiUrl}?q=${searchData}`);
   }
 
 }

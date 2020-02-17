@@ -14,6 +14,8 @@ export class ListPresentation {
   @Input() empData: Observable<Employee[]>;
   @Output() deleteEvent = new EventEmitter<number>();
   @Output() editEvent = new EventEmitter<number>();
+  @Output() searchEvent = new EventEmitter<string>();
+
   constructor() { }
 
   deleteEmployee(id: number) {
@@ -23,6 +25,10 @@ export class ListPresentation {
   
   onEdit(id: number) {
     this.editEvent.emit(id)
+  }
+
+  searchEmployee(search:string){
+    this.searchEvent.emit(search);
   }
 
 }

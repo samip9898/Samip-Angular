@@ -10,7 +10,10 @@ import { Employee } from 'src/app/employees/employees.model';
   styleUrls: ['./list-container.scss']
 })
 export class ListContainer implements OnInit {
+
+  public emp;
   employeeData: Observable<Employee[]>;
+
   constructor(private crudservice: EmployeeCrudService) {
     this.getAllEmployees();
   }
@@ -30,5 +33,12 @@ export class ListContainer implements OnInit {
   editEmployee(id:number)
     {
         this.crudservice.getId(id)
+    }
+    searchEmployee(searchData){
+      this.emp=this.crudservice.searchEmployee(searchData).subscribe(
+        data=>{
+          this.emp=data;
+        }
+      );
     }
 }

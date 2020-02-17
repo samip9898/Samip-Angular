@@ -13,7 +13,7 @@ const routes: Routes = [
   },
   {
     path : 'form' , 
-    component:FormPresentation
+    component:FormContainer
   },
   {
      path :'form-container/:id',

@@ -27,17 +27,17 @@ export class FormContainer implements OnInit {
     }
   }
 
-  createEmployee(empForm:FormGroup)
+  createEmployee(empForm:Employee)
   {
-    if(!this.id)
+    if(this.id)
     {
-      console.log(empForm.value);
-      this.employeeService.addData(empForm)
+      this.employeeService.editData(empForm,this.id)
+      
     }
     else
     {
-      console.log(empForm.value);
-      this.employeeService.editData(empForm,this.id)
+      console.log(empForm);
+      this.employeeService.addData(empForm)
     }
   }
 
