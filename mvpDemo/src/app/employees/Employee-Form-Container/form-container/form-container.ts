@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { EmployeeCrudService } from 'src/app/employees/employee-crud.service';
 import { Observable } from 'rxjs';
 import { FormGroup } from '@angular/forms';
@@ -12,10 +12,10 @@ import { Employee } from 'src/app/employees/employees.model';
 })
 export class FormContainer implements OnInit {
 
-  id:number
-  employeeDetails$:Observable<Employee[]>;
+  private id:number
+  public employeeDetails$:Observable<Employee[]>;
 
-  constructor(private routes:ActivatedRoute,private employeeService:EmployeeCrudService){
+  constructor(private routes:ActivatedRoute,private employeeService:EmployeeCrudService, private route:Router){
     this.id=this.routes.snapshot.params['id']
   }
 
@@ -31,13 +31,22 @@ export class FormContainer implements OnInit {
   {
     if(this.id)
     {
-      this.employeeService.editData(empForm,this.id)
+      this.employeeService.editData(empForm,this.id).subscribe(
+        () =>{
+          alert('EMPLOYEE UPDATED!')
+          this.route.navigate(['/employees'])
+        }
+      )
       
     }
     else
     {
       console.log(empForm);
-      this.employeeService.addData(empForm)
+      this.employeeService.addData(empForm).subscribe(
+        ()=>{
+          alert('EMPLOYEE CREATED')
+          this.route.navigate(['/employees'])
+      })
     }
   }
 

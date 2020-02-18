@@ -11,7 +11,7 @@ import { Employee } from 'src/app/employees/employees.model';
 })
 export class ListContainer implements OnInit {
 
-  public emp;
+  
   employeeData: Observable<Employee[]>;
 
   constructor(private crudservice: EmployeeCrudService) {
@@ -19,6 +19,7 @@ export class ListContainer implements OnInit {
   }
 
   ngOnInit() {
+    this.getAllEmployees();
   }
 
   getAllEmployees() {
@@ -27,18 +28,21 @@ export class ListContainer implements OnInit {
 
   deleteEmployee(id: number) {
 
-    this.crudservice.deleteEmployee(id).subscribe();
-    this.getAllEmployees();
+    this.crudservice.deleteEmployee(id).subscribe(
+      () => {
+        this.getAllEmployees()
+      }
+    );
+
   }
-  editEmployee(id:number)
-    {
-        this.crudservice.getId(id)
-    }
-    searchEmployee(searchData){
-      this.emp=this.crudservice.searchEmployee(searchData).subscribe(
-        data=>{
-          this.emp=data;
-        }
-      );
-    }
+  editEmployee(id: number) {
+    this.crudservice.getId(id)
+  }
+  public searchText(searchInfo: string): void {
+    this.employeeData = this.crudservice.searchData(searchInfo)
+  }
+  public sortData(sortField:string):void
+  {
+      this.employeeData=this.crudservice.sortData(sortField)
+  }
 }

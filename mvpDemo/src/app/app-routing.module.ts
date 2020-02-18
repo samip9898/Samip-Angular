@@ -8,17 +8,7 @@ import { from } from 'rxjs';
 
 const routes: Routes = [
   {
-    path:'employee',
-   component:ListContainer 
-  },
-  {
-    path : 'form' , 
-    component:FormContainer
-  },
-  {
-     path :'form-container/:id',
-     component:FormContainer
-
+    path:"employees", loadChildren: () => import('./employees/employees.module').then(m => m.EmployeesModule)
   }
 ];
 
