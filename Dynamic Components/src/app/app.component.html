@@ -1,0 +1,16 @@
+<div style="text-align: center;">
+  <h1>This is an example of {{title}}</h1>
+  <button (click)="createComponent()">Create Component</button>&nbsp;
+  <button (click)="destroyComponent()">Destroy
+    <button (click)= "cdkPortal()"></button>
+    Component</button>
+</div>
+<template #messageContainer>
+</template>
+
+
+<div>
+  <ng-template [cdkPortalOutlet] = "selectedPortal"></ng-template>
+</div>
+
+
