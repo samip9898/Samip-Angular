@@ -1,16 +1,15 @@
 <div style="text-align: center;">
   <h1>This is an example of {{title}}</h1>
-  <button (click)="createComponent()">Create Component</button>&nbsp;
-  <button (click)="destroyComponent()">Destroy
-    <button (click)= "cdkPortal()"></button>
-    Component</button>
+  <button (click)="createComponent()">Create Component</button>
+  <button (click)="destroyComponent()">Destroy Component</button>&nbsp;
+  <button (click)= "cdkPortal()">CDK Portal</button>
+  <button (click)="destroyCdk()">Destroy CDK</button>&nbsp;
+  <button (click)="showOverlay()">Overall Module</button>
 </div>
-<template #messageContainer>
+
+<template #messageContainer> 
 </template>
 
-
 <div>
-  <ng-template [cdkPortalOutlet] = "selectedPortal"></ng-template>
+  <ng-template [cdkPortalOutlet]="selectedPortal"></ng-template>
 </div>
-
-

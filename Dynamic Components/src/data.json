@@ -1,0 +1,184 @@
+{
+    "profiles": [
+      {
+        "name": "saumya",
+        "email": "saumya@126",
+        "address": [
+          {
+            "city": "Valsad,",
+            "street": "B-9 Rajannagar Nandanvan Socitey Abrama,",
+            "zipCode": "396001",
+            "state": "Gujarat,"
+          }
+        ],
+        "mobile": 9032353910,
+        "Department": "ML",
+        "gender": "male",
+        "hireDate": "2020-12-03",
+        "permanent": true,
+        "id": 2
+      },
+      {
+        "name": "astha yadav",
+        "email": "astha@124",
+        "address": [
+          {
+            "city": " Navsari",
+            "street": "Mitha kuva",
+            "zipCode": " 396001",
+            "state": " Gujarat,"
+          }
+        ],
+        "mobile": "8234567891",
+        "Department": "Angular",
+        "gender": "female",
+        "hireDate": "2020-12-03",
+        "permanent": true,
+        "id": 3
+      },
+      {
+        "name": "tapasya",
+        "email": "tapas98@gmail.com",
+        "address": [
+          {
+            "city": " Valsad,",
+            "street": "Ishan apt, halar roa",
+            "zipCode": "396001",
+            "state": "Gujarat,"
+          }
+        ],
+        "mobile": "9033373200",
+        "Department": "ML",
+        "gender": "female",
+        "hireDate": "",
+        "permanent": true,
+        "id": 4
+      },
+      {
+        "name": "Samip",
+        "email": "samip@123",
+        "address": [
+          {
+            "city": "Valsad,",
+            "street": "694, Rajannagar Abrama Valsad",
+            "zipCode": "396001",
+            "state": "Gujarat,"
+          }
+        ],
+        "mobile": "1234567810",
+        "Department": "QA",
+        "gender": "male",
+        "hireDate": "",
+        "permanent": true,
+        "id": 5
+      },
+      {
+        "name": "kiran",
+        "email": "kiran@98",
+        "address": [
+          {
+            "city": "Valsad,",
+            "street": "G29, halar road",
+            "zipCode": "396001",
+            "state": "Gujarat"
+          }
+        ],
+        "mobile": "4235334523",
+        "Department": "QA",
+        "gender": "male",
+        "hireDate": "",
+        "permanent": true,
+        "id": 6
+      },
+      {
+        "name": "shiv",
+        "email": "shiv@612",
+        "address": [
+          {
+            "city": "Valsad,",
+            "street": "halar road",
+            "zipCode": "396001",
+            "state": "Gujarat,"
+          }
+        ],
+        "mobile": "8730193773",
+        "Department": "QA",
+        "gender": "male",
+        "hireDate": "",
+        "permanent": true,
+        "id": 7
+      },
+      {
+        "name": "dhruvit",
+        "email": "dhruvit@98",
+        "address": [
+          {
+            "city": "Valsad,",
+            "street": "Ishan apt, halar road",
+            "zipCode": "396001",
+            "state": "Gujarat,"
+          }
+        ],
+        "mobile": "7834198327",
+        "Department": "Angular",
+        "gender": "male",
+        "hireDate": "",
+        "permanent": true,
+        "id": 8
+      },
+      {
+        "name": "amit",
+        "email": "amit@98",
+        "address": [
+          {
+            "city": "Valsad",
+            "street": "Tithal Road",
+            "zipCode": "396001",
+            "state": "Gujarat"
+          }
+        ],
+        "mobile": "4397357687",
+        "Department": "Angular",
+        "gender": "male",
+        "hireDate": "",
+        "permanent": true,
+        "id": 9
+      },
+      {
+        "name": "Bhargav",
+        "email": "ballu@98",
+        "address": [
+          {
+            "city": "Valsad",
+            "street": "Rajan Nagar",
+            "zipCode": "396001",
+            "state": "Gujarat"
+          }
+        ],
+        "mobile": "9297587383",
+        "Department": ".Net",
+        "gender": "male",
+        "hireDate": "",
+        "permanent": false,
+        "id": 10
+      },
+      {
+        "name": "Mili",
+        "email": "mili@9898",
+        "address": [
+          {
+            "city": "Valsad",
+            "street": "Tithal Road",
+            "zipCode": "396001",
+            "state": "Gujarat"
+          }
+        ],
+        "mobile": "8924672831",
+        "Department": "IOT",
+        "gender": "male",
+        "hireDate": "",
+        "permanent": true,
+        "id": 11
+      }
+    ]
+  }
